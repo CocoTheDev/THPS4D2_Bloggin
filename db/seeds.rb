@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+15.times do
+  like = Like.create!(user_id: rand(1..10), article_id: rand(1..10))
+end
