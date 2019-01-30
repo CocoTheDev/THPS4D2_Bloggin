@@ -1,5 +1,10 @@
 # README
 
+Le blog a été réalisé par Jonathan, Maxime et Marylis
+
+Dans blog_thp tu peux voir les étapes de reflexions.
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

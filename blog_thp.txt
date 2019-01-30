@@ -1,0 +1,63 @@
+
+
+rails generate model User first_name:string last_name:string email:string
+
+rails db:migrate
+
+rails db:migrate:status
+
+##### dans seed.rb:
+require 'faker'
+10.times do
+  user = User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email)
+end
+
+rails db:seed
+
+rails console ####### verifier bon fonctionnement de la commande précédente)
+
+rails generate model Article title:string content:string email:string
+
+
+##### rajout de la ligne belongs concernant la foreign key user id
+class CreateArticles < ActiveRecord::Migration[5.2]
+  def change
+    create_table :articles do |t|
+      t.string :title
+      t.string :content
+      t.belongs_to :user, index: true
+      t.timestamps
+    end
+  end
+end
+
+
+
+
+####rajout de la ligne belongs concernant la foreign key user id
+
+ class Article < ApplicationRecord
+  belongs_to :user
+end
+
+
+#####rajout de la ligne has_many concernant la foreign key article 
+
+class User < ApplicationRecord
+  has_many :articles
+end
+
+
+
+##### seed to article
+10.times do
+  article = Article.create!(title: Faker::Book.title, content: Faker::Lorem.sentence, user_id: rand(1..10))
+end
+
+
+
+
+
+
+
+
