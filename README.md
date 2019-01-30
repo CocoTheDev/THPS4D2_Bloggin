@@ -39,6 +39,6 @@ On a donc crée une base de donnée avec cinq tables et leurs attributs :
 
 
 
-### Fonctionnement du projet :
+#### Fonctionnement du projet :
 
 Dans un fichier seeds.rb, on a généré automatiquement des éléments à l'aide d'une boucle `times do` pour chaques tables grâce à la gem faker. Pour voir le resultat, se rendre dans `rails c` et utiliser la commande `tp NomTable.all`. Enjoy ;) 
